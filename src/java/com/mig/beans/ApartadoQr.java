@@ -148,7 +148,7 @@ public class ApartadoQr implements Serializable {
     public void agrApartado(Apartado apr) {        
         try {            
             db = dbExterno ? db : new Dao();            
-            db.insertar("Insert Into apartado (apar_usuario,apar_isbn) VALUES ('"+apr.getAparusuario()+"','"+apr.getAparIsbn()+"') ");                        
+            db.insertar("Insert Into Apartado (apar_usuario,apar_isbn) VALUES ('"+apr.getAparusuario()+"','"+apr.getAparIsbn()+"') ");                        
         } catch (Exception e) {
             error = e.getMessage();
         } finally {

@@ -78,7 +78,7 @@ public class ServicioApartado implements Serializable {
                     desc.setEdicion(l.getAlibrEdicion());
                     desc.setTitulo(l.getAlibrTitulo());
                     String autores = "";
-                    ResultSet rst = db.consultar("Select alib_autor From autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
+                    ResultSet rst = db.consultar("Select alib_autor From Autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
 
                     while (rst != null && rst.next()) {
                         AutorQr au = new AutorQr(db);
@@ -131,7 +131,7 @@ public class ServicioApartado implements Serializable {
 
                 consulta = consulta.toUpperCase();
                 LibroQr li = new LibroQr(db);
-                li.setCondicion(" Where libr_isbn in (Select alib_isbn From autorlibro,autor Where auto_autor = alib_autor And auto_nombre like '%" + consulta + "%') ");
+                li.setCondicion(" Where libr_isbn in (Select alib_isbn From Autorlibro,autor Where auto_autor = alib_autor And auto_nombre like '%" + consulta + "%') ");
 
                 for (Libro l : li.getLibros()) {
                     LibroDescripcion desc = new LibroDescripcion();
@@ -143,7 +143,7 @@ public class ServicioApartado implements Serializable {
                     desc.setEdicion(l.getAlibrEdicion());
                     desc.setTitulo(l.getAlibrTitulo());
                     String autores = "";
-                    ResultSet rst = db.consultar("Select alib_autor From autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
+                    ResultSet rst = db.consultar("Select alib_autor From Autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
 
                     while (rst != null && rst.next()) {
                         AutorQr au = new AutorQr(db);
@@ -208,7 +208,7 @@ public class ServicioApartado implements Serializable {
                     desc.setEdicion(l.getAlibrEdicion());
                     desc.setTitulo(l.getAlibrTitulo());
                     String autores = "";
-                    ResultSet rst = db.consultar("Select alib_autor From autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
+                    ResultSet rst = db.consultar("Select alib_autor From Autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
 
                     while (rst != null && rst.next()) {
                         AutorQr au = new AutorQr(db);
@@ -286,7 +286,7 @@ public class ServicioApartado implements Serializable {
                         desc.setEdicion(l.getAlibrEdicion());
                         desc.setTitulo(l.getAlibrTitulo());
                         String autores = "";
-                        ResultSet rst = db.consultar("Select alib_autor From autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
+                        ResultSet rst = db.consultar("Select alib_autor From Autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
 
                         while (rst != null && rst.next()) {
                             AutorQr au = new AutorQr(db);
@@ -360,7 +360,7 @@ public class ServicioApartado implements Serializable {
                 Dao db = new Dao();
 
                 LibroQr li = new LibroQr(db);
-                li.setCondicion(" Where libr_isbn in (Select apar_isbn From apartado Where apar_usuario = '" + usuario + "') ");
+                li.setCondicion(" Where libr_isbn in (Select apar_isbn From Apartado Where apar_usuario = '" + usuario + "') ");
 
                 for (Libro l : li.getLibros()) {
                     LibroDescripcion desc = new LibroDescripcion();
@@ -372,7 +372,7 @@ public class ServicioApartado implements Serializable {
                     desc.setEdicion(l.getAlibrEdicion());
                     desc.setTitulo(l.getAlibrTitulo());
                     String autores = "";
-                    ResultSet rst = db.consultar("Select alib_autor From autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
+                    ResultSet rst = db.consultar("Select alib_autor From Autorlibro Where alib_isbn = '" + l.getAlibLibro() + "' ");
 
                     while (rst != null && rst.next()) {
                         AutorQr au = new AutorQr(db);
